@@ -11,21 +11,28 @@ using Company.Responses;
 
 namespace Company.Biz.WebApi.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/ping")]
     public class PingController : Controller
     {
         private readonly IMediator _mediator;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mediator"></param>
         public PingController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
         /// <summary>
-        /// 
+        /// Create a new Ping Resource
         /// </summary>
-        /// <param name="command"></param>
-        /// <returns></returns>
+        /// <param name="command">Ping Object</param>
+        /// <returns>Returns the new Ping Resource</returns>
         [HttpPost]
         [ProducesResponseType(typeof(PingResponseVm), (int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]

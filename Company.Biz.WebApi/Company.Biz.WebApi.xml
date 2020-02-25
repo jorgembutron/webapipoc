@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Company.Biz.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Company.Biz.WebApi.Application.Commands.CreatePingCommand">
+            <summary>
+            A Ping
+            </summary>
+        </member>
+        <member name="P:Company.Biz.WebApi.Application.Commands.CreatePingCommand.Name">
+            <summary>
+            Name for the Ping
+            </summary>
+        </member>
+        <member name="T:Company.Biz.WebApi.Controllers.PingController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Biz.WebApi.Controllers.PingController.#ctor(MediatR.IMediator)">
+            <summary>
+            
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:Company.Biz.WebApi.Controllers.PingController.Create(Company.Biz.WebApi.Application.Commands.CreatePingCommand)">
+            <summary>
+            Create a new Ping Resource
+            </summary>
+            <param name="command">Ping Object</param>
+            <returns>Returns the new Ping Resource</returns>
+        </member>
+        <member name="M:Company.Biz.WebApi.Controllers.PingController.Edit(System.Int32,Company.Biz.WebApi.Application.Commands.EditPingCommand)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Company.Biz.WebApi.Controllers.PingController.Delete(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Company.Biz.WebApi.Controllers.PingController.List">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Company.Biz.WebApi.Controllers.PingController.Details(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Company.Biz.WebApi.Extensions.ServicesCollections">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Company.Biz.WebApi.ViewModels.PingResponseVm">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Company.Biz.WebApi.ViewModels.PingResponseVm.Id">
+            <summary>
+            The id for the Ping
+            </summary>
+        </member>
+        <member name="P:Company.Biz.WebApi.ViewModels.PingResponseVm.Name">
+            <summary>
+            The name of the Ping
+            </summary>
+        </member>
+    </members>
+</doc>

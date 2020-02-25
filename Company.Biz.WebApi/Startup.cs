@@ -14,6 +14,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.IO;
 using System.Reflection;
+using Company.Biz.WebApi.Extensions;
+using Microsoft.OpenApi.Models;
 
 namespace Company.Biz.WebApi
 {
@@ -50,6 +52,9 @@ namespace Company.Biz.WebApi
             services.AddMvc(options => options.Filters.Add(typeof(ValidatorActionFilter)))
                     .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<Startup>());
 
+            //ToDo: Add response with 422 Unprocessable Entity Object Result
+
+            services.AddSwagger();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,6 +75,22 @@ namespace Company.Biz.WebApi
             {
                 endpoints.MapControllers();
             });
+
+            ConfigureSwagger(app);
         }
+
+
+        private void ConfigureSwagger(IApplicationBuilder app)
+        {
+            app.UseSwagger();
+
+            app.UseSwaggerUI(setupAction =>
+            {
+                setupAction.SwaggerEndpoint("/swagger/OpenAPISpecification/swagger.json", "Library API");
+                setupAction.RoutePrefix = "";
+            });
+        }
+
+
     }
 }
