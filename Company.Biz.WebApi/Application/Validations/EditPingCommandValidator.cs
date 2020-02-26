@@ -24,6 +24,6 @@ namespace Company.Biz.WebApi.Application.Validations
         }
 
         public async Task<bool> BeUniqueAsync(string bar, CancellationToken cancellationToken) =>
-            !await _repository.CheckByNameAsync(bar).ConfigureAwait(false);
+            await _repository.CheckByNameAsync(bar).ConfigureAwait(false);
     }
 }

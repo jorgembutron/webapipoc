@@ -89,7 +89,6 @@ namespace Company.Biz.WebApi.Controllers
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(typeof(List<PingResponseVm>), (int)HttpStatusCode.OK)]
-        [ProducesResponseType(typeof(RestException), (int)HttpStatusCode.InternalServerError)]
         public async Task<ActionResult> List() => Ok((await _mediator.Send(new ListPingQuery()).ConfigureAwait(false)).Data);
 
         /// <summary>

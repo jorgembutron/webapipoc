@@ -4,12 +4,10 @@ namespace Company.Services.Exceptions
 {
     public class NotFoundException : BusinessException
     {
-        public NotFoundException()
+
+        public NotFoundException(): this(string.Empty)
         {
-                
         }
-
-
         public NotFoundException(string message) : base(message)
         {
         }

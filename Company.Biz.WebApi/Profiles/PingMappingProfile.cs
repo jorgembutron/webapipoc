@@ -5,8 +5,14 @@ using Company.Biz.WebApi.ViewModels;
 
 namespace Company.Biz.WebApi.Profiles
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class PingMappingProfile : Profile
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public PingMappingProfile()
         {
             CreateMap<CreatePingCommand, Ping>();
