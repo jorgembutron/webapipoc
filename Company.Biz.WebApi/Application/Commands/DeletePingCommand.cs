@@ -1,4 +1,4 @@
-﻿using Company.Responses;
+﻿using Company.Biz.WebApi.Responses;
 using MediatR;
 
 namespace Company.Biz.WebApi.Application.Commands

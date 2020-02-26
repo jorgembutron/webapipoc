@@ -5,7 +5,6 @@ using Company.Biz.Infrastructure.Repositories;
 using Company.Biz.WebApi.Extensions;
 using Company.Biz.WebApi.Filters;
 using Company.Biz.WebApi.Middleware;
-using Company.Services.Middlewares;
 using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Builder;

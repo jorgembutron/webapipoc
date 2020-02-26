@@ -1,6 +1,6 @@
 ﻿using Company.Biz.Domain.Model;
 using Company.Biz.Infrastructure.Abstractions;
-using Company.Responses;
+using Company.Biz.WebApi.Responses;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;

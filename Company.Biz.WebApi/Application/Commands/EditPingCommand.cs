@@ -1,9 +1,8 @@
-﻿using Company.Responses;
-using MediatR;
+﻿using MediatR;
 
 namespace Company.Biz.WebApi.Application.Commands
 {
-    public class EditPingCommand : IRequest<Response>
+    public class EditPingCommand : IRequest<bool>
     {
         public string Name { get; set; }
 

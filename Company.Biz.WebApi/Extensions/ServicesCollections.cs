@@ -11,6 +11,10 @@ namespace Company.Biz.WebApi.Extensions
     /// </summary>
     public static class ServicesCollections
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="services"></param>
         public static void AddSwagger(this IServiceCollection services)
         {
             services.AddSwaggerGen(setupAction =>

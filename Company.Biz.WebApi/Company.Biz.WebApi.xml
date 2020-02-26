@@ -84,6 +84,55 @@
             
             </summary>
         </member>
+        <member name="M:Company.Biz.WebApi.Extensions.ServicesCollections.AddSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Company.Biz.WebApi.Middleware.ExceptionHandlerMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Company.Biz.WebApi.Profiles.PingMappingProfile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Biz.WebApi.Profiles.PingMappingProfile.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Company.Biz.WebApi.Resources.Messages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Company.Biz.WebApi.Resources.Messages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Company.Biz.WebApi.Resources.Messages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Company.Biz.WebApi.Resources.Messages.PingNotFound">
+            <summary>
+              Looks up a localized string similar to Ping with Id: {0} not found..
+            </summary>
+        </member>
+        <member name="T:Company.Biz.WebApi.Responses.Response">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Company.Biz.WebApi.Startup">
             <summary>
             
@@ -112,6 +161,12 @@
             </summary>
             <param name="app"></param>
             <param name="env"></param>
+        </member>
+        <member name="M:Company.Biz.WebApi.Startup.ConfigureSwagger(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
         </member>
         <member name="T:Company.Biz.WebApi.ViewModels.PingResponseVm">
             <summary>

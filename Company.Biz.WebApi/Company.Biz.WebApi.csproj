@@ -24,9 +24,14 @@
   <ItemGroup>
     <ProjectReference Include="..\Company.Biz.Domain\Company.Biz.Domain.csproj" />
     <ProjectReference Include="..\Company.Biz.Infrastructure\Company.Biz.Infrastructure.csproj" />
-    <ProjectReference Include="..\ExternalApis\Company.Responses\Company.Responses.csproj" />
-    <ProjectReference Include="..\ExternalApis\Company.Services.Exceptions\Company.Services.Exceptions.csproj" />
-    <ProjectReference Include="..\ExternalApis\Company.Services.Middlewares\Company.Services.Middlewares.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\Messages.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -40,6 +45,16 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Messages.es-MX.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Messages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 

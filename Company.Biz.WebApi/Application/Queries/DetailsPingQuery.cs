@@ -1,5 +1,5 @@
-﻿using Company.Biz.WebApi.ViewModels;
-using Company.Responses;
+﻿using Company.Biz.WebApi.Responses;
+using Company.Biz.WebApi.ViewModels;
 using MediatR;
 
 namespace Company.Biz.WebApi.Application.Queries

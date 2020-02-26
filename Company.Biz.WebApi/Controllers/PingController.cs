@@ -1,13 +1,12 @@
 ﻿using Company.Biz.WebApi.Application.Commands;
 using Company.Biz.WebApi.Application.Queries;
-using Company.Biz.WebApi.Middleware;
+using Company.Biz.WebApi.Responses;
 using Company.Biz.WebApi.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using Company.Responses;
 
 namespace Company.Biz.WebApi.Controllers
 {
@@ -56,10 +55,7 @@ namespace Company.Biz.WebApi.Controllers
         public async Task<ActionResult> Edit(int id, [FromBody] EditPingCommand command)
         {
             command.Id = id;
-            Response response = await _mediator.Send(command).ConfigureAwait(false);
-
-            if (response.Result == Result.NotFound)
-                return NotFound();
+            _ = await _mediator.Send(command).ConfigureAwait(false);
 
             return NoContent();
         }

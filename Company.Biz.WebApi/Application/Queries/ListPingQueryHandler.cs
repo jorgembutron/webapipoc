@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Company.Biz.Domain.Model;
 using Company.Biz.Infrastructure.Abstractions;
+using Company.Biz.WebApi.Responses;
 using Company.Biz.WebApi.ViewModels;
-using Company.Responses;
 using MediatR;
 using System.Collections.Generic;
 using System.Threading;
