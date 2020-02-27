@@ -34,7 +34,7 @@ namespace Company.Biz.WebApi.Application.Queries
             Ping ping = await _repository.GetByIdAsync(request.Id, cancellationToken).ConfigureAwait(false);
 
             if (ping == null)
-                throw new NotFoundException(string.Format(Messages.PingNotFound, request.Id));
+                throw new NotFoundException(string.Format(MessagesResource.PingNotFound, request.Id));
 
             return _mapper.Map<Ping, PingResponseVm>(ping);
         }

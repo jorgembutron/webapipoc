@@ -14,12 +14,59 @@
             Name for the Ping
             </summary>
         </member>
+        <member name="T:Company.Biz.WebApi.Application.Commands.CreatePingCommandHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Biz.WebApi.Application.Commands.CreatePingCommandHandler.#ctor(AutoMapper.IMapper,Company.Biz.Infrastructure.Abstractions.IPingRepository)">
+            <summary>
+            
+            </summary>
+            <param name="mapper"></param>
+            <param name="repository"></param>
+        </member>
+        <member name="M:Company.Biz.WebApi.Application.Commands.CreatePingCommandHandler.Handle(Company.Biz.WebApi.Application.Commands.CreatePingCommand,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Company.Biz.WebApi.Application.Commands.DeletePingCommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Biz.WebApi.Application.Commands.DeletePingCommand.#ctor(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:Company.Biz.WebApi.Application.Commands.DeletePingCommandHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Biz.WebApi.Application.Commands.DeletePingCommandHandler.#ctor(Company.Biz.Infrastructure.Abstractions.IPingRepository)">
+            <summary>
+            
+            </summary>
+            <param name="repository"></param>
+        </member>
+        <member name="T:Company.Biz.WebApi.Application.Commands.EditPingCommand">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Company.Biz.WebApi.Application.Commands.EditPingCommandHandler">
             <summary>
             
             </summary>
         </member>
-        <member name="M:Company.Biz.WebApi.Application.Commands.EditPingCommandHandler.#ctor(Company.Biz.Infrastructure.Abstractions.IPingRepository)">
+        <member name="M:Company.Biz.WebApi.Application.Commands.EditPingCommandHandler.#ctor(Company.Biz.Infrastructure.Abstractions.IPingRepository,Microsoft.Extensions.Localization.IStringLocalizer{Company.Biz.WebApi.Resources.MessagesResource})">
             <summary>
             
             </summary>
@@ -32,6 +79,92 @@
             <param name="request"></param>
             <param name="cancellationToken"></param>
             <returns></returns>
+        </member>
+        <member name="T:Company.Biz.WebApi.Application.Queries.DetailsPingQuery">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Biz.WebApi.Application.Queries.DetailsPingQuery.#ctor(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:Company.Biz.WebApi.Application.Queries.DetailsPingQueryHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Biz.WebApi.Application.Queries.DetailsPingQueryHandler.#ctor(AutoMapper.IMapper,Company.Biz.Infrastructure.Abstractions.IPingRepository)">
+            <summary>
+            
+            </summary>
+            <param name="mapper"></param>
+            <param name="repository"></param>
+        </member>
+        <member name="T:Company.Biz.WebApi.Application.Queries.ListPingQuery">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Biz.WebApi.Application.Queries.ListPingQuery.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Company.Biz.WebApi.Application.Queries.ListPingQueryHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Biz.WebApi.Application.Queries.ListPingQueryHandler.#ctor(Company.Biz.Infrastructure.Abstractions.IPingRepository,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="pingRepository"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Company.Biz.WebApi.Application.Queries.ListPingQueryHandler.Handle(Company.Biz.WebApi.Application.Queries.ListPingQuery,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Company.Biz.WebApi.Application.Validations.CreatePingCommandValidator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Biz.WebApi.Application.Validations.CreatePingCommandValidator.#ctor(Company.Biz.Infrastructure.Abstractions.IPingRepository)">
+            <summary>
+            
+            </summary>
+            <param name="repository"></param>
+        </member>
+        <member name="T:Company.Biz.WebApi.Application.Validations.DeletePingCommandValidator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Biz.WebApi.Application.Validations.DeletePingCommandValidator.#ctor(Company.Biz.Infrastructure.Contexts.DummyDbContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Company.Biz.WebApi.Application.Validations.EditPingCommandValidator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Biz.WebApi.Application.Validations.EditPingCommandValidator.#ctor(Company.Biz.Infrastructure.Abstractions.IPingRepository)">
+            <summary>
+            
+            </summary>
+            <param name="repository"></param>
         </member>
         <member name="T:Company.Biz.WebApi.Controllers.PingController">
             <summary>
@@ -79,16 +212,45 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="T:Company.Biz.WebApi.Extensions.ServicesCollections">
+        <member name="T:Company.Biz.WebApi.Extensions.GlobalizationExtensions">
             <summary>
             
             </summary>
         </member>
-        <member name="M:Company.Biz.WebApi.Extensions.ServicesCollections.AddSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+        <member name="M:Company.Biz.WebApi.Extensions.GlobalizationExtensions.ConfigureLocalization(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:Company.Biz.WebApi.Extensions.SwaggerExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Biz.WebApi.Extensions.SwaggerExtensions.AddSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
             
             </summary>
             <param name="services"></param>
+        </member>
+        <member name="M:Company.Biz.WebApi.Extensions.SwaggerExtensions.UseSwaggerTool(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:Company.Biz.WebApi.Middleware.ExceptionHandlerMiddleware">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Biz.WebApi.Middleware.ExceptionHandlerMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{Company.Biz.WebApi.Middleware.ExceptionHandlerMiddleware})">
+            <summary>
+            
+            </summary>
+            <param name="requestDelegate"></param>
+            <param name="logger"></param>
         </member>
         <member name="M:Company.Biz.WebApi.Middleware.ExceptionHandlerMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
             <summary>
@@ -96,6 +258,19 @@
             </summary>
             <param name="context"></param>
             <returns></returns>
+        </member>
+        <member name="T:Company.Biz.WebApi.Middleware.ValidationPipelineBehavior`2">
+            <summary>
+            
+            </summary>
+            <typeparam name="TRequest"></typeparam>
+            <typeparam name="TResponse"></typeparam>
+        </member>
+        <member name="M:Company.Biz.WebApi.Middleware.ValidationPipelineBehavior`2.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.IValidator{`0}})">
+            <summary>
+            
+            </summary>
+            <param name="validators"></param>
         </member>
         <member name="T:Company.Biz.WebApi.Profiles.PingMappingProfile">
             <summary>
@@ -107,30 +282,25 @@
             
             </summary>
         </member>
-        <member name="T:Company.Biz.WebApi.Resources.Messages">
+        <member name="T:Company.Biz.WebApi.Resources.MessagesResource">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:Company.Biz.WebApi.Resources.Messages.ResourceManager">
+        <member name="P:Company.Biz.WebApi.Resources.MessagesResource.ResourceManager">
             <summary>
               Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:Company.Biz.WebApi.Resources.Messages.Culture">
+        <member name="P:Company.Biz.WebApi.Resources.MessagesResource.Culture">
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:Company.Biz.WebApi.Resources.Messages.PingNotFound">
+        <member name="P:Company.Biz.WebApi.Resources.MessagesResource.PingNotFound">
             <summary>
               Looks up a localized string similar to Ping with Id: {0} not found..
-            </summary>
-        </member>
-        <member name="T:Company.Biz.WebApi.Responses.Response">
-            <summary>
-            
             </summary>
         </member>
         <member name="T:Company.Biz.WebApi.Startup">
@@ -161,12 +331,6 @@
             </summary>
             <param name="app"></param>
             <param name="env"></param>
-        </member>
-        <member name="M:Company.Biz.WebApi.Startup.ConfigureSwagger(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
-            <summary>
-            
-            </summary>
-            <param name="app"></param>
         </member>
         <member name="T:Company.Biz.WebApi.ViewModels.PingResponseVm">
             <summary>

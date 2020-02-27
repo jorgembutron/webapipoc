@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
@@ -9,7 +10,7 @@ namespace Company.Biz.WebApi.Extensions
     /// <summary>
     /// 
     /// </summary>
-    public static class ServicesCollections
+    public static class SwaggerExtensions
     {
         /// <summary>
         /// 
@@ -39,6 +40,21 @@ namespace Company.Biz.WebApi.Extensions
                 var xmlCommentsPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
 
                 setupAction.IncludeXmlComments(xmlCommentsPath);
+            });
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="app"></param>
+        public static void UseSwaggerTool(this IApplicationBuilder app)
+        {
+            app.UseSwagger();
+
+            app.UseSwaggerUI(setupAction =>
+            {
+                setupAction.SwaggerEndpoint("/swagger/OpenAPISpecification/swagger.json", "Library API");
+                setupAction.RoutePrefix = "";
             });
         }
     }

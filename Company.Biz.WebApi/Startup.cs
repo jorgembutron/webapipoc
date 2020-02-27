@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Globalization;
 using AutoMapper;
 using Company.Biz.Infrastructure.Abstractions;
 using Company.Biz.Infrastructure.Contexts;
@@ -15,6 +17,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.IO;
 using System.Reflection;
+using Microsoft.AspNetCore.Localization;
 
 namespace Company.Biz.WebApi
 {
@@ -43,6 +46,8 @@ namespace Company.Biz.WebApi
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
             services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationPipelineBehavior<,>));
 
@@ -81,6 +86,8 @@ namespace Company.Biz.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.ConfigureLocalization();
+
             app.UseRouting();
 
             app.UseMiddleware(typeof(ExceptionHandlerMiddleware));
@@ -92,24 +99,7 @@ namespace Company.Biz.WebApi
                 endpoints.MapControllers();
             });
 
-            ConfigureSwagger(app);
+            app.UseSwaggerTool();
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="app"></param>
-        private void ConfigureSwagger(IApplicationBuilder app)
-        {
-            app.UseSwagger();
-
-            app.UseSwaggerUI(setupAction =>
-            {
-                setupAction.SwaggerEndpoint("/swagger/OpenAPISpecification/swagger.json", "Library API");
-                setupAction.RoutePrefix = "";
-            });
-        }
-
-
     }
 }

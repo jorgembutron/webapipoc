@@ -18,23 +18,23 @@ namespace Company.Biz.WebApi.Filters
 
         public void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            if (!filterContext.ModelState.IsValid)
+            if (filterContext.ModelState.IsValid) 
+                return;
+
+            var result = new ContentResult();
+            var errors = new Dictionary<string, string[]>();
+
+            foreach (var valuePair in filterContext.ModelState)
             {
-                var result = new ContentResult();
-                var errors = new Dictionary<string, string[]>();
-
-                foreach (var valuePair in filterContext.ModelState)
-                {
-                    errors.Add(valuePair.Key, valuePair.Value.Errors.Select(x => x.ErrorMessage).ToArray());
-                }
-
-                string content = JsonConvert.SerializeObject(new { errors });
-                result.Content = content;
-                result.ContentType = "application/json";
-
-                filterContext.HttpContext.Response.StatusCode = 422; 
-                filterContext.Result = result;
+                errors.Add(valuePair.Key, valuePair.Value.Errors.Select(x => x.ErrorMessage).ToArray());
             }
+
+            string content = JsonConvert.SerializeObject(new { errors });
+            result.Content = content;
+            result.ContentType = "application/json";
+
+            filterContext.HttpContext.Response.StatusCode = 422; 
+            filterContext.Result = result;
         }
 
         public void OnActionExecuted(ActionExecutedContext filterContext)

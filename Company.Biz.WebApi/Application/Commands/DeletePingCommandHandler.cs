@@ -29,7 +29,7 @@ namespace Company.Biz.WebApi.Application.Commands
             Ping ping = await _repository.GetByIdAsync(request.Id, cancellationToken).ConfigureAwait(false);
 
             if (ping == null)
-                throw new NotFoundException(string.Format(Messages.PingNotFound, request.Id));
+                throw new NotFoundException(string.Format(MessagesResource.PingNotFound, request.Id));
 
             await _repository.DeleteAsync(ping, cancellationToken).ConfigureAwait(false);
 

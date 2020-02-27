@@ -27,10 +27,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\Messages.Designer.cs">
+    <Compile Update="Resources\MessagesResource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Messages.resx</DependentUpon>
+      <DependentUpon>MessagesResource.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -48,12 +48,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\Messages.es-MX.resx">
+    <EmbeddedResource Update="Resources\MessagesResource.es-MX.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Messages.resx">
+    <EmbeddedResource Update="Resources\MessagesResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <LastGenOutput>MessagesResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
