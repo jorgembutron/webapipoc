@@ -1,5 +1,4 @@
-﻿using Company.Biz.WebApi.Responses;
-using Company.Biz.WebApi.ViewModels;
+﻿using Company.Biz.WebApi.ViewModels;
 using MediatR;
 
 namespace Company.Biz.WebApi.Application.Commands
@@ -7,7 +6,7 @@ namespace Company.Biz.WebApi.Application.Commands
     /// <summary>
     /// A Ping
     /// </summary>
-    public class CreatePingCommand : IRequest<Response<PingResponseVm>>
+    public class CreatePingCommand : IRequest<PingResponseVm>
     {
         /// <summary>
         /// Name for the Ping

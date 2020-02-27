@@ -9,11 +9,19 @@ using Company.Biz.WebApi.Exceptions;
 
 namespace Company.Biz.WebApi.Middleware
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ExceptionHandlerMiddleware
     {
         private readonly RequestDelegate _requestDelegate;
         private readonly ILogger<ExceptionHandlerMiddleware> _logger;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="requestDelegate"></param>
+        /// <param name="logger"></param>
         public ExceptionHandlerMiddleware(RequestDelegate requestDelegate, ILogger<ExceptionHandlerMiddleware> logger)
         {
             _requestDelegate = requestDelegate;

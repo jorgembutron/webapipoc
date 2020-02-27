@@ -15,7 +15,7 @@ namespace Company.Biz.Infrastructure.Abstractions
 
         Task<Ping> GetByIdAsync(int id, CancellationToken cancellationToken);
 
-        Task<List<Ping>> GetAll(CancellationToken cancellationToken);
+        Task<List<Ping>> GetAllAsync(CancellationToken cancellationToken);
 
         Task<bool> CheckByNameAsync(string name);
     }

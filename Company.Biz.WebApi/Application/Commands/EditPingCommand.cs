@@ -2,6 +2,9 @@
 
 namespace Company.Biz.WebApi.Application.Commands
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class EditPingCommand : IRequest<bool>
     {
         public string Name { get; set; }

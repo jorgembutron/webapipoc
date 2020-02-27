@@ -7,11 +7,18 @@ using System.Threading.Tasks;
 
 namespace Company.Biz.WebApi.Application.Validations
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class EditPingCommandValidator : AbstractValidator<EditPingCommand>
     {
         private readonly IPingRepository _repository;
         private readonly DummyDbContext _context;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="repository"></param>
         public EditPingCommandValidator(IPingRepository repository)
         {
             _repository = repository;

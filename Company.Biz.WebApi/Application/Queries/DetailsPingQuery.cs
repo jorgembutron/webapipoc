@@ -1,12 +1,17 @@
-﻿using Company.Biz.WebApi.Responses;
-using Company.Biz.WebApi.ViewModels;
+﻿using Company.Biz.WebApi.ViewModels;
 using MediatR;
 
 namespace Company.Biz.WebApi.Application.Queries
 {
-
-    public class DetailsPingQuery : IRequest<Response<PingResponseVm>>
+    /// <summary>
+    /// 
+    /// </summary>
+    public class DetailsPingQuery : IRequest<PingResponseVm>
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
         public DetailsPingQuery(int id)
         {
             this.Id = id;

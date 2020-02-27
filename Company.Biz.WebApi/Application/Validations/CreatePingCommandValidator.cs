@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Company.Biz.WebApi.Application.Validations
 {
+
+    /// <summary>
+    /// 
+    /// </summary>
     public class CreatePingCommandValidator : AbstractValidator<CreatePingCommand>
     {
         private readonly IPingRepository _repository;
@@ -13,6 +17,11 @@ namespace Company.Biz.WebApi.Application.Validations
         public async Task<bool> BeUniqueAsync(string bar, CancellationToken cancellationToken) =>
             !await _repository.CheckByNameAsync(bar).ConfigureAwait(false);
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="repository"></param>
         public CreatePingCommandValidator(IPingRepository repository)
         {
             _repository = repository;

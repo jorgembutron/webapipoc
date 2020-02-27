@@ -1,10 +1,16 @@
-﻿using Company.Biz.WebApi.Responses;
-using MediatR;
+﻿using MediatR;
 
 namespace Company.Biz.WebApi.Application.Commands
 {
-    public class DeletePingCommand : IRequest<Response>
+    /// <summary>
+    /// 
+    /// </summary>
+    public class DeletePingCommand : IRequest<bool>
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
         public DeletePingCommand(int id)
         {
             Id = id;

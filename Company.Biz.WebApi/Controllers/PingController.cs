@@ -1,6 +1,5 @@
 ﻿using Company.Biz.WebApi.Application.Commands;
 using Company.Biz.WebApi.Application.Queries;
-using Company.Biz.WebApi.Responses;
 using Company.Biz.WebApi.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -37,9 +36,9 @@ namespace Company.Biz.WebApi.Controllers
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<ActionResult> Create([FromBody] CreatePingCommand command)
         {
-            Response<PingResponseVm> response = await _mediator.Send(command).ConfigureAwait(false);
+            PingResponseVm response = await _mediator.Send(command).ConfigureAwait(false);
 
-            return CreatedAtRoute("Details", new { id = response.Data.Id }, response.Data);
+            return CreatedAtRoute("Details", new { id = response.Id }, response);
         }
 
         /// <summary>
@@ -71,10 +70,7 @@ namespace Company.Biz.WebApi.Controllers
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            Response response = await _mediator.Send(new DeletePingCommand(id)).ConfigureAwait(false);
-
-            if (response.Result == Result.NotFound)
-                return NotFound();
+            _ = await _mediator.Send(new DeletePingCommand(id)).ConfigureAwait(false);
 
             return NoContent();
         }
@@ -85,7 +81,8 @@ namespace Company.Biz.WebApi.Controllers
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(typeof(List<PingResponseVm>), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult> List() => Ok((await _mediator.Send(new ListPingQuery()).ConfigureAwait(false)).Data);
+        public async Task<ActionResult> List() =>
+            Ok(await _mediator.Send(new ListPingQuery()).ConfigureAwait(false));
 
         /// <summary>
         /// 
@@ -95,14 +92,7 @@ namespace Company.Biz.WebApi.Controllers
         [HttpGet("{id}", Name = "Details")]
         [ProducesResponseType(typeof(PingResponseVm), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<ActionResult> Details(int id)
-        {
-            Response<PingResponseVm> response = await _mediator.Send(new DetailsPingQuery(id)).ConfigureAwait(false);
-
-            if (response.Result == Result.NotFound)
-                return NotFound();
-
-            return Ok(response.Data);
-        }
+        public async Task<ActionResult> Details(int id) =>
+            Ok(await _mediator.Send(new DetailsPingQuery(id)).ConfigureAwait(false));
     }
 }

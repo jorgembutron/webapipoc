@@ -42,7 +42,7 @@ namespace Company.Biz.Infrastructure.Repositories
         public async Task<Ping> GetByIdAsync(int id, CancellationToken cancellationToken) =>
             await _context.Ping.FirstOrDefaultAsync(x => x.Id == id, cancellationToken).ConfigureAwait(false);
 
-        public async Task<List<Ping>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<Ping>> GetAllAsync(CancellationToken cancellationToken)
         {
             IQueryable<Ping> queryable = _context.Ping.AsNoTracking();
 

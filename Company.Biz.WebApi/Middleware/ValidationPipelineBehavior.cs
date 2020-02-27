@@ -7,10 +7,19 @@ using System.Threading.Tasks;
 
 namespace Company.Biz.WebApi.Middleware
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="TRequest"></typeparam>
+    /// <typeparam name="TResponse"></typeparam>
     public class ValidationPipelineBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {
         private readonly List<IValidator<TRequest>> _validators;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="validators"></param>
         public ValidationPipelineBehavior(IEnumerable<IValidator<TRequest>> validators)
         {
             _validators = validators.ToList();
