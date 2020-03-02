@@ -17,9 +17,10 @@ namespace Company.Integration.Tests.Repositories
             //Arrange
             var builder = new DbContextOptionsBuilder<DummyDbContext>();
             builder.UseInMemoryDatabase(Guid.NewGuid().ToString());
-            int pingId = await AddAPingAsync(builder.Options);
 
             //Act
+            int pingId = await AddAPingAsync(builder.Options);
+
             await using (var context = new DummyDbContext(builder.Options))
             {
                 var repository = new PingRepository(context);

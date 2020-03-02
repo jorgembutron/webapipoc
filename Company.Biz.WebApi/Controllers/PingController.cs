@@ -1,19 +1,19 @@
 ﻿using Company.Biz.WebApi.Application.Commands;
 using Company.Biz.WebApi.Application.Queries;
+using Company.Biz.WebApi.Constants;
 using Company.Biz.WebApi.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Localization;
 
 namespace Company.Biz.WebApi.Controllers
 {
     /// <summary>
     /// 
     /// </summary>
-    [Route("api/ping")]
+    [Route(Routes.PingRoute)]
     public class PingController : Controller
     {
         private readonly IMediator _mediator;

@@ -4,6 +4,19 @@
         <name>Company.Biz.WebApi</name>
     </assembly>
     <members>
+        <member name="T:Company.Biz.WebApi.Application.Behaviors.ValidationPipelineBehavior`2">
+            <summary>
+            
+            </summary>
+            <typeparam name="TRequest"></typeparam>
+            <typeparam name="TResponse"></typeparam>
+        </member>
+        <member name="M:Company.Biz.WebApi.Application.Behaviors.ValidationPipelineBehavior`2.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.IValidator{`0}})">
+            <summary>
+            
+            </summary>
+            <param name="validators"></param>
+        </member>
         <member name="T:Company.Biz.WebApi.Application.Commands.CreatePingCommand">
             <summary>
             A Ping
@@ -166,6 +179,26 @@
             </summary>
             <param name="repository"></param>
         </member>
+        <member name="T:Company.Biz.WebApi.Constants.MimeTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Company.Biz.WebApi.Constants.MimeTypes.ApplicationsJson">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Company.Biz.WebApi.Constants.Routes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Company.Biz.WebApi.Constants.Routes.PingRoute">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Company.Biz.WebApi.Controllers.PingController">
             <summary>
             
@@ -259,19 +292,6 @@
             <param name="context"></param>
             <returns></returns>
         </member>
-        <member name="T:Company.Biz.WebApi.Middleware.ValidationPipelineBehavior`2">
-            <summary>
-            
-            </summary>
-            <typeparam name="TRequest"></typeparam>
-            <typeparam name="TResponse"></typeparam>
-        </member>
-        <member name="M:Company.Biz.WebApi.Middleware.ValidationPipelineBehavior`2.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.IValidator{`0}})">
-            <summary>
-            
-            </summary>
-            <param name="validators"></param>
-        </member>
         <member name="T:Company.Biz.WebApi.Profiles.PingMappingProfile">
             <summary>
             
@@ -331,6 +351,12 @@
             </summary>
             <param name="app"></param>
             <param name="env"></param>
+        </member>
+        <member name="M:Company.Biz.WebApi.Startup.ConfigureConnection">
+            <summary>
+            
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Company.Biz.WebApi.ViewModels.PingResponseVm">
             <summary>

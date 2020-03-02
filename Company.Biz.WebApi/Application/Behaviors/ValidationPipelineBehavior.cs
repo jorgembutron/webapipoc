@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Company.Biz.WebApi.Middleware
+namespace Company.Biz.WebApi.Application.Behaviors
 {
     /// <summary>
     /// 
@@ -39,7 +39,7 @@ namespace Company.Biz.WebApi.Middleware
                 throw new ValidationException(failures);
             }
 
-            return await next();
+            return await next().ConfigureAwait(false);
         }
     }
 }

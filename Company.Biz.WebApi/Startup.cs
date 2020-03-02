@@ -1,9 +1,8 @@
-using System.Collections.Generic;
-using System.Globalization;
 using AutoMapper;
 using Company.Biz.Infrastructure.Abstractions;
 using Company.Biz.Infrastructure.Contexts;
 using Company.Biz.Infrastructure.Repositories;
+using Company.Biz.WebApi.Application.Behaviors;
 using Company.Biz.WebApi.Extensions;
 using Company.Biz.WebApi.Filters;
 using Company.Biz.WebApi.Middleware;
@@ -17,7 +16,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.IO;
 using System.Reflection;
-using Microsoft.AspNetCore.Localization;
 
 namespace Company.Biz.WebApi
 {
@@ -38,7 +36,7 @@ namespace Company.Biz.WebApi
         /// <summary>
         /// 
         /// </summary>
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; set; }
 
         /// <summary>
         /// This method gets called by the runtime. Use this method to add services to the container.
@@ -53,16 +51,16 @@ namespace Company.Biz.WebApi
 
             services.AddScoped<IPingRepository, PingRepository>();
 
-            IConfigurationRoot configuration = new ConfigurationBuilder()
+            var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", true)
-                .Build();
+                .AddJsonFile("appsettings.json", true);
 
-            string connection = configuration.GetConnectionString("Dev");
+            Configuration = builder.Build();
 
-            services.AddDbContext<DummyDbContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<DummyDbContext>(options => options.UseSqlServer(ConfigureConnection()));
 
             services.AddAutoMapper(GetType().Assembly);
+            //services.AddAutoMapper(typeof(Startup));
 
             services.AddControllers();
 
@@ -101,5 +99,11 @@ namespace Company.Biz.WebApi
 
             app.UseSwaggerTool();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public virtual string ConfigureConnection() => Configuration.GetConnectionString("Dev");
     }
 }
