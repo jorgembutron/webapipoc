@@ -14,8 +14,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Company.Integration.Tests", "Company.Integration.Tests\Company.Integration.Tests.csproj", "{84C3E9F0-1098-4791-8C40-2B8D19EBC384}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{C02D32C2-1F39-440F-89F9-80BF516C50F8}"
+	ProjectSection(SolutionItems) = preProject
+		ToDo.txt = ToDo.txt
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Biz.Factories", "Company.Biz.Factories\Company.Biz.Factories.csproj", "{48709215-E15D-44D9-A9B1-CCA678ED2DDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Company.Biz.Factories", "Company.Biz.Factories\Company.Biz.Factories.csproj", "{48709215-E15D-44D9-A9B1-CCA678ED2DDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
