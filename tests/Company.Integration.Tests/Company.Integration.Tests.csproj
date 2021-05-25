@@ -40,13 +40,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Company.Biz.Factories\Company.Biz.Factories.csproj" />
-    <ProjectReference Include="..\Company.Biz.Infrastructure\Company.Biz.Infrastructure.csproj" />
-    <ProjectReference Include="..\Company.Biz.WebApi\Company.Biz.WebApi.csproj" />
+    <Folder Include="EndToEnd\Helpers\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="EndToEnd\Helpers\" />
+    <ProjectReference Include="..\..\src\Company.Biz.WebApi\Company.Biz.WebApi.csproj" />
+    <ProjectReference Include="..\Company.Biz.Factories\Company.Biz.Factories.csproj" />
   </ItemGroup>
 
 </Project>
