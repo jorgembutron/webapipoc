@@ -1,1 +1,2 @@
 -Migrate Application Folder to a Project Type
+-Server=localhost\SQLEXPRESS;Database=Dummy;Trusted_Connection=True;
