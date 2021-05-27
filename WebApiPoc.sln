@@ -10,8 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{C02D32C2-1F3
 		ToDo.txt = ToDo.txt
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tf", "tf", "{6A80CF64-3487-4297-8A84-B8021A25BC86}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Company.Biz.Domain", "src\Company.Biz.Domain\Company.Biz.Domain.csproj", "{D1A82935-3D90-493B-8A5B-A30CADBCD514}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Company.Biz.Infrastructure", "src\Company.Biz.Infrastructure\Company.Biz.Infrastructure.csproj", "{7A2A87E7-5722-412F-BD1E-F6D0A30746B7}"
@@ -21,6 +19,16 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Company.Integration.Tests", "tests\Company.Integration.Tests\Company.Integration.Tests.csproj", "{9EAF5A2C-99CF-4148-9B67-CBCAA67556A6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Company.Biz.Factories", "tests\Company.Biz.Factories\Company.Biz.Factories.csproj", "{1330680D-7D34-47C9-9B83-EF93A7AA94A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tf", "tf", "{FF1DE669-A8F1-4389-B1F1-EB122F07A2F2}"
+	ProjectSection(SolutionItems) = preProject
+		tf\main.tf = tf\main.tf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init", "init", "{15FDD3F3-17F3-4670-BA45-ECAC56CE02C3}"
+	ProjectSection(SolutionItems) = preProject
+		tf\init\s3.tf = tf\init\s3.tf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +66,7 @@ Global
 		{1BEABEF4-7D54-40DE-9969-B0A128F0EEE2} = {C02D32C2-1F39-440F-89F9-80BF516C50F8}
 		{9EAF5A2C-99CF-4148-9B67-CBCAA67556A6} = {F4349D96-CE7E-4BC9-A121-4C8FCBCAA7A9}
 		{1330680D-7D34-47C9-9B83-EF93A7AA94A4} = {F4349D96-CE7E-4BC9-A121-4C8FCBCAA7A9}
+		{15FDD3F3-17F3-4670-BA45-ECAC56CE02C3} = {FF1DE669-A8F1-4389-B1F1-EB122F07A2F2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C7909D2-BB4C-4149-AAC6-EBE7E8735490}

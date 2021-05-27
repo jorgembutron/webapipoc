@@ -1,6 +1,7 @@
 ﻿using Company.Biz.WebApi.Application.Commands;
 using Company.Biz.WebApi.Application.Queries;
 using Company.Biz.WebApi.Constants;
+using Company.Biz.WebApi.Extensions;
 using Company.Biz.WebApi.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -30,16 +31,19 @@ namespace Company.Biz.WebApi.Controllers
         /// <summary>
         /// Create a new Ping Resource
         /// </summary>
-        /// <param name="command">Ping Object</param>
+        /// <param name="request"></param>
         /// <returns>Returns the new Ping Resource</returns>
         [HttpPost]
         [ProducesResponseType(typeof(PingResponseVm), (int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public async Task<ActionResult> Create([FromBody] CreatePingCommand command)
+        public async Task<ActionResult> Create([FromBody] PingRequest request)
         {
-            PingResponseVm response = await _mediator.Send(command).ConfigureAwait(false);
+            var command = request.ToCreatePingCommand();
 
-            return CreatedAtRoute("Details", new { id = response.Id }, response);
+            return Ok();
+            //PingResponseVm response = await _mediator.Send(command).ConfigureAwait(false);
+
+            //return CreatedAtRoute("Details", new { id = response.Id }, response);
         }
 
         /// <summary>

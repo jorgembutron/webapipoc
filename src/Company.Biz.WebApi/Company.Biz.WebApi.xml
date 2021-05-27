@@ -210,11 +210,11 @@
             </summary>
             <param name="mediator"></param>
         </member>
-        <member name="M:Company.Biz.WebApi.Controllers.PingController.Create(Company.Biz.WebApi.Application.Commands.CreatePingCommand)">
+        <member name="M:Company.Biz.WebApi.Controllers.PingController.Create(Company.Biz.WebApi.ViewModels.PingRequest)">
             <summary>
             Create a new Ping Resource
             </summary>
-            <param name="command">Ping Object</param>
+            <param name="request"></param>
             <returns>Returns the new Ping Resource</returns>
         </member>
         <member name="M:Company.Biz.WebApi.Controllers.PingController.Edit(System.Int32,Company.Biz.WebApi.Application.Commands.EditPingCommand)">
