@@ -10,5 +10,5 @@ terraform {
 }
 
 resource "aws_sns_topic" "myTopic" {
-  
+  name = "malicious-sns"
 }
